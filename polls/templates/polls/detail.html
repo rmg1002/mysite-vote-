@@ -1,0 +1,13 @@
+{{ question }}<br>
+{{ question.question_text }}
+<hr>
+<form action="/polls/{{ question.id }}/vote/">
+{% for c in question.choice_set.all %}
+<p>
+    <input type = "radio" name ="choice" value="{{ c.id }}">
+    {{ c.choice_text }}
+    </p>
+    {% endfor %}
+    <input type="submit">
+
+    </form>
